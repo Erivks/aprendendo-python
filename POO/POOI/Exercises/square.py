@@ -10,12 +10,12 @@ class Square(object):
         return self.side ** 2
 
 def main():
-    side_of_sq = input("Inform the square's side: ")
+    side_of_sq = input("Report the square's side: ")
     square = Square(side_of_sq)
     print("Square's area: {}".format(square.calculateArea()))
-    answer = input("Do you want change the square's side? (y/n)")
+    answer = input("Do you want change the square's side? (y/n) ")
     if answer == 'y':
-        side_of_sq = input("Inform the new square's side: ")
+        side_of_sq = input("Report the new square's side: ")
         square.setSide(side_of_sq)
         print("This is the new square's side: {}".format(square.returnSide()))
         print("And this is the area of the square: {}".format(square.calculateArea()))

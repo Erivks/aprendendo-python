@@ -31,14 +31,14 @@ class Floor(object):
         return self.cm / 100
 
 def main():
-    length = input('Inform the length: ')
-    width = input('Inform the width: ')
+    length = input('Report the length: ')
+    width = input('Report the width: ')
     rectangle = Rectangle(length, width)
     print('Ok, the rectangle was created.\nAnd these are it sides:')
     rectangle.returnSides()
     answer = input('Do you would want change any value? (y/n)')
     if answer == 'y':
-        length = input('Inform the new value for length: ')
+        length = input('Report the new value for length: ')
         width = input('And the new value for width: ')
         rectangle.changeSides(length, width)
         print('The values were changed.')
@@ -47,7 +47,7 @@ def main():
     print('These are the values for:')
     print('Area:', rectangle.calculateArea())
     print('Perimeter:', rectangle.calculatePerimeter())
-    cm = input('So now inform the floor value in cm: ')
+    cm = input('So now Report the floor value in cm: ')
     floor = Floor(cm)
     mfloor = floor.cmTom()
     m2 = rectangle.calculateArea()
