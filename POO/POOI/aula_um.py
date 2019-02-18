@@ -1,3 +1,4 @@
+#SINTAXE BÁSICA, CONSTRUTOR E MÉTODOS
 class Meu_Objeto(object):
     #Método construtor
     def __init__(self): #'self' é referência ao objeto criado e sempre que quisermos que uma instancia 
