@@ -105,6 +105,17 @@ def existsID():
             print('This ID not exists, try another one.')
             check = False
 
+def notExistsID():
+    check = False
+    while check != True:
+        ID = input('Report your ID: ')
+        if ID in data:
+            print('This ID already exists, try another one.')
+            check = False
+        else:
+            check = True
+            return ID
+            
 def accountCreate():
     name = input('Report your name: ')
     ID = createID()
