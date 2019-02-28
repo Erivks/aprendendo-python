@@ -94,6 +94,17 @@ class Account(Bank):
         else:
             print("You can't recieve loan.")
 
+def existsID():
+    check = False
+    while check != True:
+        ID = input('Report the ID: ')
+        if ID in data:
+            check = True
+            return ID
+        else:
+            print('This ID not exists, try another one.')
+            check = False
+
 def accountCreate():
     name = input('Report your name: ')
     ID = createID()
@@ -134,7 +145,7 @@ def accountLoan():
     value = askValue(op)
     account.loan(value)
     back()
-    
+
 def checkAnswer(awr):
     if awr == '1':
         accountCreate()
