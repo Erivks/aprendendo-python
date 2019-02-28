@@ -94,6 +94,16 @@ class Account(Bank):
         else:
             print("You can't recieve loan.")
 
+def askValue(op):
+    if op == 'deposit':
+        value = input('What is the value of {}? '.format(op))
+    elif op == 'withdrawal':
+        value = input('What is the value of {}? '.format(op))
+    elif op == 'loan':
+        value = input('What is the value of {}? '.format(op))
+    value = float(value)
+    return value
+
 def existsID():
     check = False
     while check != True:
@@ -164,7 +174,7 @@ def accountLoan():
 def numberEmpty():
     awr = input('Please, report a valid operation: ')
     checkAnswer(awr)
-    
+
 def checkAnswer(awr):
     if awr == '1':
         accountCreate()
