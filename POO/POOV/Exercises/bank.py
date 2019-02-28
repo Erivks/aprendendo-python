@@ -126,6 +126,14 @@ def accountWithdrawal():
     password = askPassword()
     account.withdrawal(password, value)
     back()
+
+def accountLoan():
+    op = 'loan'
+    ID = existsID()
+    account = data[ID]
+    value = askValue(op)
+    account.loan(value)
+    back()
     
 def checkAnswer(awr):
     if awr == '1':
