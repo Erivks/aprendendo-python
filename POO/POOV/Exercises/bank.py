@@ -19,9 +19,9 @@ class Bank(object):
             return None
 '''SUBCLASS'''
 class Account(Bank):
-    def __init__(self, id, password):
+    def __init__(self, ID, password):
         self.__balance = 50.0
-        self.__id = id
+        self.__id = ID
         self.__password = password
     def correctPassword(self, password):
         if password == self.__password:
@@ -68,13 +68,22 @@ class Account(Bank):
         else:
             return False
     def returnWithdrawal(self):
-        return ('Your balance is {}'.format(self.__balance))
+        ('Your balance is {}'.format(self.__balance))
+        print('')
     def loan(self, value):
         if self.canRecieveLoan():
             if super().loan(value) != None:
                 self.__balance += value
                 print('You recieve loan of: {}'.format(value))
                 self.returnWithdrawal()
-                print('')
         else:
             print("You can't recieve loan.")
+
+def createAccount():
+    ID = input('Report your name: ')
+    password = input("Report your password: ")
+    print('')
+    account = Account(ID, password)
+    return account
+
+
