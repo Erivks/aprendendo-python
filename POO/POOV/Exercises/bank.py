@@ -86,4 +86,8 @@ def createAccount():
     account = Account(ID, password)
     return account
 
+def accountDeposit(account):
+    value = input("Which value you want deposit? ")
+    account.deposit(value)
+
 
