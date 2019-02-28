@@ -24,11 +24,15 @@ class Account(Bank):
         else:
             return False
     def deposit(self, password, value):
-        if password == self.__password:
-            print('The password is correct.')
-            self.__balance += value
-            Bank.__total_amount += value
-            print('Deposit made succefull')
-        else:
-            print('Password is incorrect.')
-    
+        correct = False
+        while correct != True:
+            if self.correctPassword(password):
+                print('The password is correct.')
+                self.__balance += value
+                Bank.__total_amount += value
+                print('Deposit made succefull')
+                correct = True
+            else:
+                print('Password is incorrect.')
+                password = input('Report the password again: ')
+                correct = False
