@@ -1,7 +1,7 @@
 '''SUPERCLASS'''
 class Bank(object):
     __total_amount = 1000000
-    booking_fee = .1
+    booking_fee = 0.1
     __required_reserve = 10000
     def __calculateReserve(self):
         return Bank.__total_amount * Bank.booking_fee
@@ -15,7 +15,7 @@ class Bank(object):
 '''SUBCLASS'''
 class Account(Bank):
     def __init__(self, id, password):
-        self.__balance = 50
+        self.__balance = 50.0
         self.__id = id
         self.__password = password
     def correctPassword(self, password):
@@ -30,7 +30,24 @@ class Account(Bank):
                 print('The password is correct.')
                 self.__balance += value
                 Bank.__total_amount += value
-                print('Deposit made succefull')
+                print('Deposit made succefull.')
+                print('Balance value: {}'.format(self.__balance))
+                print('')
+                correct = True
+            else:
+                print('Password is incorrect.')
+                password = input('Report the password again: ')
+                correct = False
+    def withdrawal(self, password, value):
+        correct = False
+        while correct != True:
+            if self.correctPassword(password):
+                print('The password is correct.')
+                self.__balance -= value
+                Bank.__total_amount -= value
+                print('Withdrawal made succefull.')
+                print('Balance value: {}'.format(self.__balance))
+                print('')
                 correct = True
             else:
                 print('Password is incorrect.')
