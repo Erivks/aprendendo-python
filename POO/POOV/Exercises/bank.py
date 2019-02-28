@@ -115,7 +115,11 @@ def notExistsID():
         else:
             check = True
             return ID
-            
+
+def createID():
+    ID = notExistsID()
+    return ID
+    
 def accountCreate():
     name = input('Report your name: ')
     ID = createID()
