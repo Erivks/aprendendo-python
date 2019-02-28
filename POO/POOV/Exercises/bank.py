@@ -94,10 +94,13 @@ class Account(Bank):
         else:
             print("You can't recieve loan.")
 
+def accountExit():
+    print('Thanks for choosing our bank, have a greate day.\n')
+
 def askPassword():
     password = input('What is your password? ')
     return password
-    
+
 def back():
     awr = input('Do you want back to main? (y/n)')
     if awr == 'y':
