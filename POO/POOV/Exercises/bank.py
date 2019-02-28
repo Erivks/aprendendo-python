@@ -81,6 +81,8 @@ class Account(Bank):
     def getBalance(self):
         print('Your balance is {}'.format(self.__balance))
         print('')
+    def getID(self):
+        return self.__id
     def loan(self, value):
         if self.canRecieveLoan():
             if super().loan(value) != None:
