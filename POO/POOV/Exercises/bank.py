@@ -43,13 +43,24 @@ class Account(Bank):
         while correct != True:
             if self.correctPassword(password):
                 print('The password is correct.')
-                self.__balance -= value
-                Bank.__total_amount -= value
-                print('Withdrawal made succefull.')
-                print('Balance value: {}'.format(self.__balance))
-                print('')
-                correct = True
+                if self.__balance > value:
+                    self.__balance -= value
+                    Bank.__total_amount -= value
+                    print('Withdrawal made succefull.')
+                    print('Balance value: {}'.format(self.__balance))
+                    print('')
+                    correct = True
+                else:
+                    print('Sorry, insufficient balance.')
+                    break
             else:
                 print('Password is incorrect.')
                 password = input('Report the password again: ')
                 correct = False
+    def canRecieveLoan(self):
+        if self.__balance > 0.0:
+            return True
+        else:
+            return False
+    def returnWithdrawal(self):
+        return ('Your balance is {}'.format(self.__balance))
