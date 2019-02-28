@@ -108,6 +108,15 @@ def accountBalance():
     account = data[ID]
     account.getBalance()
     back()
+
+def accountDeposit():
+    op = 'deposit'
+    ID = existsID()
+    account = data[ID]
+    value = askValue(op)
+    password = askPassword()
+    account.deposit(password, value)
+    back()
     
 def checkAnswer(awr):
     if awr == '1':
