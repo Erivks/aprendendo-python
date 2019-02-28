@@ -94,6 +94,15 @@ class Account(Bank):
         else:
             print("You can't recieve loan.")
 
+def accountCreate():
+    name = input('Report your name: ')
+    ID = createID()
+    password = input("Report your password: ")
+    print('')
+    account = Account(ID, name, password)
+    data[ID] = account
+    back()
+
 def checkAnswer(awr):
     if awr == '1':
         accountCreate()
@@ -109,7 +118,7 @@ def checkAnswer(awr):
         accountExit()
     else:
         numberEmpty()
-        
+
 def main():
     print("=== BANK ===\n")
     answer = input("[ 1 ] Create account\n[ 2 ] Check balance\n[ 3 ] Deposit\n[ 4 ] Withdrawal\n[ 5 ] Loan\n[ 0 ] Exit.\n\nAwnser: ")
