@@ -19,7 +19,11 @@ class Bank(object):
             return value
         else:
             return None
-
+    def setTotalAmount(self, value, tp):
+        if tp == 1:
+            self.__total_amount -= value
+        elif tp == 2:
+            self.__total_amount += value
 
 '''SUBCLASS'''
 class Account(Bank):
