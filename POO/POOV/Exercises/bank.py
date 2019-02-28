@@ -103,6 +103,12 @@ def accountCreate():
     data[ID] = account
     back()
 
+def accountBalance():
+    ID = existsID()
+    account = data[ID]
+    account.getBalance()
+    back()
+    
 def checkAnswer(awr):
     if awr == '1':
         accountCreate()
