@@ -94,7 +94,22 @@ class Account(Bank):
         else:
             print("You can't recieve loan.")
 
-
+def checkAnswer(awr):
+    if awr == '1':
+        accountCreate()
+    elif awr == '2':
+        accountBalance()
+    elif awr == '3':
+        accountDeposit()
+    elif awr == '4':
+        accountWithdrawal()
+    elif awr == '5':
+        accountLoan()
+    elif awr == '0':
+        accountExit()
+    else:
+        numberEmpty()
+        
 def main():
     print("=== BANK ===\n")
     answer = input("[ 1 ] Create account\n[ 2 ] Check balance\n[ 3 ] Deposit\n[ 4 ] Withdrawal\n[ 5 ] Loan\n[ 0 ] Exit.\n\nAwnser: ")
