@@ -1,4 +1,5 @@
 import shelve
+
 data = shelve.open('data_bank')
 '''SUPERCLASS'''
 class Bank(object):
@@ -211,3 +212,4 @@ def main():
     checkAnswer(answer)
 
 main()
+data.close()
