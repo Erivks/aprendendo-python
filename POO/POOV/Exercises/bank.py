@@ -5,13 +5,18 @@ class Bank(object):
     __required_reserve = 10000
     def __calculateReserve(self):
         return Bank.__total_amount * Bank.booking_fee
-    def canLoan(self, value):
+    def __canLoan(self, value):
         reserve = self.__calculateReserve()
-        if reserve - value > Bank.__required_reserve:
+        if (reserve - value) > Bank.__required_reserve:
             return True
         else:
             return False
-    
+    def loan(self, value):
+        if self.__canLoan(value):
+            Bank.__total_amount -= value
+            return value
+        else:
+            return None
 '''SUBCLASS'''
 class Account(Bank):
     def __init__(self, id, password):
@@ -64,3 +69,12 @@ class Account(Bank):
             return False
     def returnWithdrawal(self):
         return ('Your balance is {}'.format(self.__balance))
+    def loan(self, value):
+        if self.canRecieveLoan():
+            if super().loan(value) != None:
+                self.__balance += value
+                print('You recieve loan of: {}'.format(value))
+                self.returnWithdrawal()
+                print('')
+        else:
+            print("You can't recieve loan.")
