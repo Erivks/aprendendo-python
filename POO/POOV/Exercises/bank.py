@@ -94,13 +94,17 @@ class Account(Bank):
         else:
             print("You can't recieve loan.")
 
+def askPassword():
+    password = input('What is your password? ')
+    return password
+    
 def back():
     awr = input('Do you want back to main? (y/n)')
     if awr == 'y':
         main()
     else:
         pass
-        
+
 def askValue(op):
     if op == 'deposit':
         value = input('What is the value of {}? '.format(op))
