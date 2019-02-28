@@ -83,6 +83,8 @@ class Account(Bank):
         print('')
     def getID(self):
         return self.__id
+    def setTotalAmount(self, value, tp):
+        super().setTotalAmount(value, tp)
     def loan(self, value):
         if self.canRecieveLoan():
             if super().loan(value) != None:
