@@ -119,7 +119,7 @@ def notExistsID():
 def createID():
     ID = notExistsID()
     return ID
-    
+
 def accountCreate():
     name = input('Report your name: ')
     ID = createID()
@@ -161,6 +161,10 @@ def accountLoan():
     account.loan(value)
     back()
 
+def numberEmpty():
+    awr = input('Please, report a valid operation: ')
+    checkAnswer(awr)
+    
 def checkAnswer(awr):
     if awr == '1':
         accountCreate()
