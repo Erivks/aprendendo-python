@@ -1,0 +1,5 @@
+dollars = int(input("How many dollars you get per hour? "))
+hours = int(input("How many hours you work per day? "))
+days = int(input("How many days you work per month? "))
+salary = ((dollars * hours) * days)
+print("Your salary is:", salary)
