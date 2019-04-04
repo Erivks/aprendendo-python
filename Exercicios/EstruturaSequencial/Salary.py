@@ -1,0 +1,10 @@
+reais = float(input("Quantos reais ganha por hora? "))
+horas = int(input("Quantas horas trabalha por dia? "))
+dias = int(input("Quantos dias trabalha por mês? "))
+salarioBruto = ((horas * reais) * dias)
+impostoRenda = ((salarioBruto * 11) / 100)
+inss = ((salarioBruto * 8) / 100)
+sindicato = ((salarioBruto * 5) / 100)
+desconto = ((impostoRenda + inss) + sindicato)
+salarioLiquido = salarioBruto - desconto
+print("\n+ Salário Bruto: R$ {}\n- IR (%11): R$ {}\n- INSS (%8): {}\n- Sindicato (%5): R$ {}\n= Salário Liquido: R$ {}".format(salarioBruto, impostoRenda, inss, sindicato, salarioLiquido))
